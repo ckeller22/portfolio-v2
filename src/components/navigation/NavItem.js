@@ -1,6 +1,6 @@
 const NavItem = ({ title }) => {
   return (
-    <li className="text-earth-gray-200 font-normal ">
+    <li className="font-normal text-earth-gray-200 ">
       <a href="/">{title}</a>
     </li>
   );
