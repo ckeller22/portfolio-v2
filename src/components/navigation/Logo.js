@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <a href="/" className="block text-4xl font-extrabold text-earth-gray-200 ">
+    <a href="/" className="block text-4xl font-extrabold text-green-300 ">
       ck.xyz
     </a>
   );
