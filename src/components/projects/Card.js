@@ -1,15 +1,13 @@
 import tw from "tailwind-styled-components";
+import GitHubIcon from "../icons/GitHubIcon";
+import FolderIcon from "../icons/FolderIcon";
+import ExternalLinkIcon from "../icons/ExternalLinkIcon";
 
 const Card = () => {
   const Container = tw.div(`
-    h-72
-    w-5/6
     bg-earth-gray-800
     rounded-sm
     text-earth-gray-50
-    
-    my-2
-    mx-auto
     filter
     drop-shadow-lg
     p-4
@@ -17,10 +15,17 @@ const Card = () => {
 
   return (
     <Container>
-      <div className="grid w-full h-full grid-rows-3 debug">
-        <div className="flex justify-between">
-          <h1>Folder</h1>
-          <h1>External link</h1>
+      <div className="grid w-full h-full grid-rows-3 ">
+        <div className="flex justify-between ">
+          <div className="w-8 h-8 text-yellow-300 stroke-current stroke-2">
+            <FolderIcon />
+          </div>
+          <div className="w-8 h-8 fill-current text-earth-gray-50">
+            <GitHubIcon />
+          </div>
+          <div className="w-5 h-5 fill-current stroke-current stroke-2 text-earth-gray-50">
+            <ExternalLinkIcon />
+          </div>
         </div>
         <div className="row-span-2">
           <h2 className="text-xl font-bold tracking-wide debug">
