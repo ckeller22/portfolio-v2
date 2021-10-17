@@ -5,8 +5,10 @@ import ExternalLinkIcon from "../icons/ExternalLinkIcon";
 
 const Card = () => {
   const Container = tw.div(`
+    h-80
+    
     bg-earth-gray-800
-    rounded-sm
+    rounded-md
     text-earth-gray-50
     filter
     drop-shadow-lg
@@ -27,15 +29,15 @@ const Card = () => {
             <ExternalLinkIcon />
           </div>
         </div>
-        <div className="row-span-2">
-          <h2 className="text-xl font-bold tracking-wide debug">
+        <div className="flex flex-col row-span-2">
+          <h2 className="text-xl font-bold tracking-wide ">
             Portfolio Website
           </h2>
-          <p className="leading-tight tracking-wide text-md debug">
+          <p className="leading-tight tracking-wide text-md ">
             Web application that allows users to buy and sell event tickets. Web
             application that allows users to buy and sell event tickets.
           </p>
-          <p className="font-light tracking-wider text-md debug text-earth-gray-300">
+          <p className="my-auto mb-0 font-light tracking-wider text-md text-earth-gray-300">
             Typescript React
           </p>
         </div>

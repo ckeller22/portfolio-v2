@@ -1,9 +1,10 @@
-import GitHubIcon from "../icons/GitHubIcon";
-
-const Icon = () => {
+const Icon = ({ children, url }) => {
   return (
-    <a className="block w-8 h-8 fill-current text-earth-gray-50" href="/">
-      <GitHubIcon />
+    <a
+      className="block fill-current stroke-current content-box w-7 h-7 text-earth-gray-50"
+      href={url}
+    >
+      {children}
     </a>
   );
 };

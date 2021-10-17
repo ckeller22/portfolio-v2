@@ -6,8 +6,8 @@ const Projects = () => {
   const GridContainer = tw.div(`
     grid
     grid-cols-3
-    space-x-2
-    space-y-2
+    space-x-4
+    space-y-4
   `);
 
   return (
