@@ -1,6 +1,8 @@
 import HeroLinkItem from "./HeroLinkItem";
 import EditorSVG from "./EditorSVG";
 
+//TODO: Refactor links in hero image to use static data
+
 const Hero = () => {
   return (
     <div className="grid max-w-6xl grid-cols-2 mx-auto my-64 ">
