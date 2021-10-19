@@ -3,6 +3,7 @@ import LINKS from "../../data/links";
 
 import Icon from "./Icon";
 
+//TODO: Factor out the sidebar container
 const SideBar = () => {
   const icons = LINKS.map((link) => {
     return <Icon url={link.url}>{link.svg}</Icon>;
