@@ -5,31 +5,42 @@ import ExternalLinkIcon from "../icons/ExternalLinkIcon";
 
 const Card = ({ project }) => {
   const CardContainer = tw.div(`
+    group
+    hover:-translate-y-2
+    transform
+    transition
+    duration-300
     bg-earth-gray-800
     rounded-md
     text-earth-gray-50
     filter
+    flex
+    flex-col
     drop-shadow-xl
     p-4
   `);
 
-  const Grid = ({ children }) => {
-    return <div className="grid w-full h-full grid-rows-3 ">{children}</div>;
-  };
+  // const Grid = ({ children }) => {
+  //   return (
+  //     <div className="grid w-full h-full grid-rows-4 debug">{children}</div>
+  //   );
+  // };
 
   const Info = ({ children }) => {
-    return <div className="flex flex-col row-span-2">{children}</div>;
+    return <div className="flex flex-col h-full mt-4">{children}</div>;
   };
 
   const Title = () => {
     return (
-      <h2 className="text-xl font-bold tracking-wide ">{project.title}</h2>
+      <h2 className="text-xl font-bold tracking-wide transition-colors duration-300 group-hover:text-green-300">
+        {project.title}
+      </h2>
     );
   };
 
   const Description = () => {
     return (
-      <p className="leading-tight tracking-wide text-md ">
+      <p className="mt-2 mb-4 leading-tight tracking-wide text-md">
         {project.description}
       </p>
     );
@@ -38,14 +49,14 @@ const Card = ({ project }) => {
   const TechList = () => {
     const technologies = project.technologies.map((technology) => {
       return (
-        <li className="my-auto mb-0 font-light tracking-wider text-md text-earth-gray-300">
+        <li className="my-auto font-light tracking-wider transition duration-300 text-md text-earth-gray-300 group-hover:text-green-300">
           {technology}
         </li>
       );
     });
 
     return (
-      <ul className="flex flex-row my-auto mb-0 space-x-4 text-sm ">
+      <ul className="flex flex-row flex-wrap my-auto mb-0 space-x-4 text-sm ">
         {technologies}
       </ul>
     );
@@ -57,7 +68,7 @@ const Card = ({ project }) => {
 
   const Folder = () => {
     return (
-      <div className="w-8 h-8 text-yellow-300 stroke-current stroke-2 ">
+      <div className="w-8 h-8 text-green-300 stroke-current stroke-2 ">
         <FolderIcon />
       </div>
     );
@@ -65,17 +76,23 @@ const Card = ({ project }) => {
 
   const GitHub = () => {
     return (
-      <div className="fill-current w-7 h-7 text-earth-gray-50">
+      <a
+        className="fill-current w-7 h-7 text-earth-gray-50"
+        href={project.githubURL}
+      >
         <GitHubIcon />
-      </div>
+      </a>
     );
   };
 
   const ExternalLink = () => {
     return (
-      <div className="fill-current stroke-current stroke-2 w-7 h-7 text-earth-gray-50">
+      <a
+        className="fill-current stroke-current stroke-2 w-7 h-7 text-earth-gray-50"
+        href={project.liveURL}
+      >
         <ExternalLinkIcon />
-      </div>
+      </a>
     );
   };
 
@@ -85,20 +102,18 @@ const Card = ({ project }) => {
 
   return (
     <CardContainer>
-      <Grid>
-        <IconContainer>
-          <Folder />
-          <RightAlignedContainer>
-            <GitHub />
-            <ExternalLink />
-          </RightAlignedContainer>
-        </IconContainer>
-        <Info>
-          <Title />
-          <Description />
-          <TechList />
-        </Info>
-      </Grid>
+      <IconContainer>
+        <Folder />
+        <RightAlignedContainer>
+          <GitHub />
+          {project.liveURL !== null && <ExternalLink />}
+        </RightAlignedContainer>
+      </IconContainer>
+      <Info>
+        <Title />
+        <Description />
+        <TechList />
+      </Info>
     </CardContainer>
   );
 };

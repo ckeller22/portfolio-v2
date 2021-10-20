@@ -8,7 +8,7 @@ function EmailSideBar({ url }) {
       <a
         className="text-sm tracking-wider font-extralight"
         style={{ writingMode: "vertical-rl" }}
-        href={email}
+        href={`mailto:${email}`}
       >
         {email}
       </a>

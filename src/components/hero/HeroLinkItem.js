@@ -1,7 +1,9 @@
 const HeroLinkItem = ({ title, url }) => {
   return (
     <li className="">
-      <a href={url}>{title}</a>
+      <a className="transition duration-300 hover:text-green-300" href={url}>
+        {title}
+      </a>
     </li>
   );
 };

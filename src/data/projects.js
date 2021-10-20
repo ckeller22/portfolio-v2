@@ -47,7 +47,7 @@ export const projects = [
   },
   {
     id: uuidv4(),
-    title: "Customer Management System",
+    title: "WGU CRM",
     description:
       "JavaFX application intended to be used as a customer management system for a fictitious company. Allows users to manage and store both customer and appointment records.",
     technologies: ["Java", "JavaFX", "mySQL"],
