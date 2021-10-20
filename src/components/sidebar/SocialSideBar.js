@@ -4,9 +4,13 @@ import { links } from "../../data/statics";
 import Icon from "./Icon";
 import SideBar from "../layout/SideBar";
 
-const LinkSideBar = () => {
+const SocialSideBar = () => {
   const icons = links.map((link) => {
-    return <Icon url={link.url}>{link.svg}</Icon>;
+    return (
+      <Icon key={link.id} url={link.url}>
+        {link.svg}
+      </Icon>
+    );
   });
 
   const List = tw.ul(`
@@ -23,4 +27,4 @@ const LinkSideBar = () => {
   );
 };
 
-export default LinkSideBar;
+export default SocialSideBar;

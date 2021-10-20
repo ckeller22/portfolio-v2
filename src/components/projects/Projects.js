@@ -5,7 +5,7 @@ import { projects } from "../../data/statics";
 
 const Projects = () => {
   const cards = projects.map((project) => {
-    return <Card project={project} />;
+    return <Card project={project} key={project.id} />;
   });
 
   const GridContainer = tw.div(`

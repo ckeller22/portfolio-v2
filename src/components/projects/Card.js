@@ -2,6 +2,7 @@ import tw from "tailwind-styled-components";
 import GitHubIcon from "../icons/GitHubIcon";
 import FolderIcon from "../icons/FolderIcon";
 import ExternalLinkIcon from "../icons/ExternalLinkIcon";
+import { v4 as uuidv4 } from "uuid";
 
 const Card = ({ project }) => {
   const CardContainer = tw.div(`
@@ -49,7 +50,10 @@ const Card = ({ project }) => {
   const TechList = () => {
     const technologies = project.technologies.map((technology) => {
       return (
-        <li className="my-auto font-light tracking-wider transition duration-300 text-md text-earth-gray-300 group-hover:text-green-300">
+        <li
+          className="my-auto font-light tracking-wider transition duration-300 text-md text-earth-gray-300 group-hover:text-green-300"
+          key={uuidv4()}
+        >
           {technology}
         </li>
       );
