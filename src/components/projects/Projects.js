@@ -2,6 +2,7 @@ import tw from "tailwind-styled-components";
 import CenteredContainer from "../layout/CenteredContainer";
 import Card from "./Card";
 import { projects } from "../../data/statics";
+import SectionHeader from "../layout/SectionHeader";
 
 const Projects = () => {
   const cards = projects.map((project) => {
@@ -17,9 +18,7 @@ const Projects = () => {
 
   return (
     <CenteredContainer>
-      <h1 className="mb-1 text-3xl font-bold tracking-wider text-earth-gray-50">
-        PROJECTS
-      </h1>
+      <SectionHeader title="Projects" />
 
       <GridContainer>{cards}</GridContainer>
     </CenteredContainer>

@@ -1,7 +1,7 @@
 const EditorSVG = () => {
   return (
     <svg
-      className="h-auto mx-auto my-auto mt-0 mr-0 fill-current w-96 text-earth-gray-700 "
+      className="h-auto mx-auto my-auto mr-0 fill-current w-96 text-earth-gray-700 "
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 491.52 491.52"
     >

@@ -3,6 +3,7 @@ import Hero from "./components/hero/Hero";
 import SocialSideBar from "./components/sidebar/SocialSideBar";
 import Projects from "./components/projects/Projects";
 import EmailSideBar from "./components/sidebar/EmailSideBar";
+import About from "./components/about/About";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <EmailSideBar />
       <NavBar />
       <Hero />
+      <About />
       <Projects />
     </main>
   );
