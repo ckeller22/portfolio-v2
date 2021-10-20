@@ -1,13 +1,18 @@
 import tw from "tailwind-styled-components";
 import CenteredContainer from "../layout/CenteredContainer";
 import Card from "./Card";
+import { projects } from "../../data/statics";
 
 const Projects = () => {
+  const cards = projects.map((project) => {
+    return <Card project={project} />;
+  });
+
   const GridContainer = tw.div(`
     grid
     grid-cols-3
-    space-x-4
-    space-y-4
+    grid-rows-2
+    gap-5
   `);
 
   return (
@@ -16,14 +21,7 @@ const Projects = () => {
         PROJECTS
       </h1>
 
-      <GridContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </GridContainer>
+      <GridContainer>{cards}</GridContainer>
     </CenteredContainer>
   );
 };

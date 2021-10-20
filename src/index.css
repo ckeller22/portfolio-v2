@@ -3,21 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  /* apply a natural box layout model to all elements, but allowing components to change */
-  html {
-    box-sizing: border-box;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
 }
 
 @layer components {
   .main-container {
     height: 4000px;
+  }
+
+  .debug {
+    border: 2px solid lime;
   }
 }
 

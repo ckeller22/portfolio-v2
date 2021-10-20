@@ -22,7 +22,7 @@ const Hero = () => {
           support and provide technical services.
         </p>
         <div className="mt-2">
-          <button className="items-center px-6 py-1 mt-2 font-semibold text-yellow-200 border-2 border-yellow-200 rounded-sm ">
+          <button className="items-center px-6 py-1 mt-2 font-semibold text-yellow-200 border-2 border-yellow-200 rounded-sm">
             Projects
           </button>
         </div>
