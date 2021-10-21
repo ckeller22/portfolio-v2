@@ -81,7 +81,7 @@ const Card = ({ project }) => {
   const GitHub = () => {
     return (
       <a
-        className="fill-current w-7 h-7 text-earth-gray-50"
+        className="fill-current w-7 h-7 text-earth-gray-50 icon-hover"
         href={project.githubURL}
       >
         <GitHubIcon />
@@ -92,7 +92,7 @@ const Card = ({ project }) => {
   const ExternalLink = () => {
     return (
       <a
-        className="fill-current stroke-current stroke-2 w-7 h-7 text-earth-gray-50"
+        className="fill-current stroke-current stroke-2 w-7 h-7 text-earth-gray-50 icon-hover"
         href={project.liveURL}
       >
         <ExternalLinkIcon />
