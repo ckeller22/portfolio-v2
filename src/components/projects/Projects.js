@@ -17,7 +17,7 @@ const Projects = () => {
   `);
 
   return (
-    <CenteredContainer>
+    <CenteredContainer id="projects">
       <SectionHeader title="Projects" />
 
       <GridContainer>{cards}</GridContainer>

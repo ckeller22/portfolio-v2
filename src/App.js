@@ -5,6 +5,7 @@ import Projects from "./components/projects/Projects";
 import EmailSideBar from "./components/sidebar/EmailSideBar";
 import About from "./components/about/About";
 import Skills from "./components/skills/Skills";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
       <EmailSideBar />
       <NavBar />
       <Hero />
+      <Projects />
       <About />
       <Skills />
-      <Projects />
+      <Contact />
     </main>
   );
 }

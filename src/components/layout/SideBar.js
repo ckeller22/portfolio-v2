@@ -1,10 +1,9 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 
-function SideBar({ children, location }) {
+function SideBar({ children, className }) {
   const SideBar = tw.div(`
-    ${location === "left" ? "left-10" : ""}
-    ${location === "right" ? "right-10" : ""}
+    ${className}
 
     fixed
     bottom-0

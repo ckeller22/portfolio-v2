@@ -21,7 +21,7 @@ const SocialSideBar = () => {
   `);
 
   return (
-    <SideBar location="left">
+    <SideBar className="left-10">
       <List>{icons}</List>
     </SideBar>
   );

@@ -4,7 +4,7 @@ import { email } from "../../data/statics";
 
 function EmailSideBar({ url }) {
   return (
-    <SideBar location="right">
+    <SideBar className="right-10">
       <a
         className="text-sm tracking-wider font-extralight"
         style={{ writingMode: "vertical-rl" }}

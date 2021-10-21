@@ -1,6 +1,7 @@
 import EditorSVG from "./EditorSVG";
 import CenteredContainer from "../layout/CenteredContainer";
 import { links } from "../../data/statics";
+import OutlinedButton from "../layout/OutlinedButton";
 
 const Hero = () => {
   const CenteredGrid = ({ children }) => {
@@ -30,16 +31,6 @@ const Hero = () => {
           high-quality websites and applications. I am also experienced in IT
           support and provide technical services.
         </p>
-      </div>
-    );
-  };
-
-  const ButtonCTA = () => {
-    return (
-      <div>
-        <button className="items-center px-6 py-1 mt-2 font-semibold text-green-300 transition duration-300 border-2 border-green-300 rounded-sm hover:text-earth-gray-50 hover:border-earth-gray-50 hover:bg-earth-gray-700">
-          Projects
-        </button>
       </div>
     );
   };
@@ -74,7 +65,7 @@ const Hero = () => {
       <CenteredGrid>
         <TextContainer>
           <HeroText />
-          <ButtonCTA />
+          <OutlinedButton url="" title="Projects" />
           <HeroLinkList />
         </TextContainer>
         <EditorSVG />
