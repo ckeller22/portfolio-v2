@@ -7,15 +7,19 @@ import { email } from "../../data/statics";
 function Contact() {
   return (
     <CenteredContainer>
-      <SectionHeader title="Get in touch"></SectionHeader>
-      <div className="h-screen mx-auto my-auto text-earth-gray-300 bg-earth-gray-700">
-        <p className="max-w-md mx-auto my-auto tracking-wide">
+      <div className="flex flex-col items-center justify-center h-screen text-earth-gray-300">
+        <SectionHeader title="Get in touch"></SectionHeader>
+        <p className="max-w-2xl mx-auto mt-2 text-lg tracking-wide text-center">
           I am always looking for any new opportunities. Whether you need an app
           built and designed, an IT professional, or you just want to shoot me a
           hello, my inbox is always open. I'll make sure to get back to you as
           soon as possible!
         </p>
-        <OutlinedButton url={`mailto:${email}`} title="Get in touch!" />
+        <OutlinedButton
+          className="mt-4"
+          url={`mailto:${email}`}
+          title="Contact"
+        />
       </div>
     </CenteredContainer>
   );

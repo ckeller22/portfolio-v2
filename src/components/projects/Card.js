@@ -11,6 +11,7 @@ const Card = ({ project }) => {
     transform
     transition
     duration-300
+    ease-out
     bg-earth-gray-800
     rounded-md
     text-earth-gray-50

@@ -29,7 +29,7 @@ const Hero = () => {
         <p className="tracking-wide text-earth-gray-300 leading ">
           I am a software engineer specializing in developing and designing
           high-quality websites and applications. I am also experienced in IT
-          support and provide technical services.
+          support and can provide technical services.
         </p>
       </div>
     );
