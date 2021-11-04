@@ -14,8 +14,8 @@ function App() {
       <EmailSideBar />
       <NavBar />
       <Hero />
-      <Projects />
       <About />
+      <Projects />
       <Skills />
       <Contact />
     </main>

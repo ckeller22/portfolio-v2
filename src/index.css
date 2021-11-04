@@ -17,6 +17,10 @@
   .debug {
     border: 2px solid lime;
   }
+
+  .bg-portrait-image {
+    background: url("./images/portrait.jpg");
+  }
 }
 
 @layer utilities {
