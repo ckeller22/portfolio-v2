@@ -4,7 +4,6 @@ import SocialSideBar from "./components/sidebar/SocialSideBar";
 import Projects from "./components/projects/Projects";
 import EmailSideBar from "./components/sidebar/EmailSideBar";
 import About from "./components/about/About";
-import Skills from "./components/skills/Skills";
 import Contact from "./components/contact/Contact";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <Hero />
       <About />
       <Projects />
-      <Skills />
       <Contact />
     </main>
   );

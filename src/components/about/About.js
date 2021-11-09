@@ -3,9 +3,11 @@ import SectionHeader from "../layout/SectionHeader";
 import portrait from "../../images/duotone.jpg";
 
 function About() {
-  const Paragraph = ({ text }) => {
+  const Paragraph = ({ children }) => {
     return (
-      <p className="max-w-lg pb-4 tracking-wide text-earth-gray-300">{text}</p>
+      <div className="pb-4 pr-5 leading-relaxed text-earth-gray-300">
+        {children}
+      </div>
     );
   };
 
@@ -14,20 +16,26 @@ function About() {
   };
 
   const TextContainer = ({ children }) => {
-    return <div className="w-1/2 mr-20">{children}</div>;
+    return <div className="w-3/5">{children}</div>;
   };
 
   const PortraitImage = () => {
     return (
-      <div className="w-1/2 ">
-        <img src={portrait} className="mx-auto rounded-full " alt=""></img>
+      <div className="w-2/5 h-full pl-10">
+        <img
+          src={portrait}
+          className="w-full rounded-full filter drop-shadow-lg"
+          alt=""
+        ></img>
       </div>
     );
   };
 
   const TechList = () => {
     const ListItem = ({ technology }) => {
-      return <li className="text-lg font-bold text-green-200">{technology}</li>;
+      return (
+        <li className="text-lg font-bold text-earth-gray-200">{technology}</li>
+      );
     };
 
     const technologies = [
@@ -44,38 +52,56 @@ function About() {
       return <ListItem technology={technology}></ListItem>;
     });
 
-    return <ul className="grid grid-cols-2 pb-4 ">{allTechnologies}</ul>;
+    return <ul className="grid grid-cols-3 pb-4 ">{allTechnologies}</ul>;
   };
 
   return (
-    <CenteredContainer>
-      <SectionHeader title="About me" />
-      <FlexContainer>
-        <TextContainer>
-          <Paragraph
-            text="I wear many hats. I am a software engineer, IT expert, and a nerd.
-            Growing up I had always had a passion for taking things apart, breaking
-            stuff, and figuring out how to put things back together again. I am
-            a creative person and love creating and designing beautiful
-            experiences and elegant software and solutions. Whether it be music,
-            art, or technology, I just love to make things."
-          />
-          <Paragraph
-            text="I am also a natural problem solver and I get a lot of gratification
-            solving difficult problems. I am A+ certified and can provide IT
-            troubleshooting support. I've built and maintained several
-            computers."
-          />
-          <Paragraph
-            text="In my free time, I love to make music, play board games, and enjoy a
-            beer or two with friends."
-          />
-          <Paragraph text="I am most proficent in the following technologies. A full list of technologies I have worked can be viewed either on my resume or my GitHub." />
-          <TechList />
-          <Paragraph text="A full list of technologies I have worked with can be viewed either on my resume or my GitHub." />
-        </TextContainer>
-        <PortraitImage />
-      </FlexContainer>
+    <CenteredContainer className="h-screen">
+      <div className="mx-20">
+        <SectionHeader title="About me" className="pb-2" />
+
+        <FlexContainer>
+          <TextContainer className="">
+            <Paragraph>
+              <p>
+                I am a software engineer, IT expert, and a nerd. Growing up I
+                had always had a passion for taking things apart, breaking
+                stuff, and figuring out how to put things back together again. I
+                am a creative person and love creating and designing beautiful
+                experiences and elegant software and solutions. Whether it be
+                music, art, or technology, I just love to make things.
+              </p>
+            </Paragraph>
+
+            <Paragraph>
+              <p>
+                I am also a natural problem solver and I get a lot of
+                gratification solving difficult problems. I am A+ certified and
+                can provide IT troubleshooting support. I've built and
+                maintained several computers.
+              </p>
+            </Paragraph>
+            <Paragraph>
+              <p>
+                In my free time, I love to make music, play board games, and
+                enjoy a beer or two with friends.
+              </p>
+            </Paragraph>
+            <Paragraph>
+              <p>I am most proficent in the following technologies :</p>
+            </Paragraph>
+            <TechList />
+            <Paragraph>
+              <p>
+                A full list of technologies I have worked with can be viewed
+                either on my resume or my GitHub.
+              </p>
+            </Paragraph>
+          </TextContainer>
+
+          <PortraitImage />
+        </FlexContainer>
+      </div>
     </CenteredContainer>
   );
 }
