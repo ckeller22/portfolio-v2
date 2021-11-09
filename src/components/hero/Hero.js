@@ -6,24 +6,26 @@ import OutlinedButton from "../layout/OutlinedButton";
 const Hero = () => {
   const CenteredGrid = ({ children }) => {
     return (
-      <div className="grid items-center h-screen grid-cols-2">{children}</div>
+      <div className="flex flex-col items-center h-screen grid-cols-2 px-6 pt-56 md:pt-0 md:px-0 md:grid">
+        {children}
+      </div>
     );
   };
 
   const TextContainer = ({ children }) => {
-    return <div className="flex flex-col">{children}</div>;
+    return <div className="h-screen md:h-auto">{children}</div>;
   };
 
   const HeroText = () => {
     return (
-      <div>
+      <div className="">
         <h4 className="font-bold tracking-widest uppercase text-earth-gray-700">
           My name is
         </h4>
-        <h1 className="text-6xl font-bold tracking-wide text-earth-gray-50">
+        <h1 className="text-4xl font-bold tracking-wide md:text-6xl text-earth-gray-50">
           Chris Keller
         </h1>
-        <h2 className="mb-2 text-4xl font-bold tracking-wider text-earth-gray-300">
+        <h2 className="mb-2 text-2xl font-bold tracking-wider md:text-4xl text-earth-gray-300">
           I build things.
         </h2>
         <p className="tracking-wide text-earth-gray-300 leading ">
@@ -54,14 +56,14 @@ const Hero = () => {
     });
 
     return (
-      <ul className="flex flex-row my-auto mt-10 mb-0 space-x-10 text-earth-gray-100">
+      <ul className="flex flex-row my-auto mt-2 mb-0 space-x-10 md:mt-10 text-earth-gray-100 ">
         {heroLinks}
       </ul>
     );
   };
 
   return (
-    <CenteredContainer>
+    <CenteredContainer className="">
       <CenteredGrid>
         <TextContainer>
           <HeroText />
