@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
+import OutlinedButton from "../layout/OutlinedButton";
 
 //TODO: Set up links, add resume, green outline button
 
@@ -13,21 +14,30 @@ const NavBar = () => {
     console.log(mobileNavOpen);
   };
 
-  const NavItem = ({ title }) => {
+  const NavItem = ({ url, text }) => {
     return (
       <li className="hidden font-normal transition duration-300 text-earth-gray-200 hover:text-green-300 md:block">
-        <a href="/">{title}</a>
+        <a href={url}>{text}</a>
+      </li>
+    );
+  };
+
+  const ResumeButton = () => {
+    return (
+      <li className="hidden md:block">
+        <a href="/assets/ChristopherKellerResumeSD.pdf" download>
+          <OutlinedButton text="Resume" />
+        </a>
       </li>
     );
   };
 
   const NavLinks = () => {
     return (
-      <ul className="flex justify-end space-x-6 ">
-        <NavItem title="About" />
-        <NavItem title="Projects" />
-        <NavItem title="Skills" />
-        <NavItem title="Resume" />
+      <ul className="flex items-center justify-end space-x-6">
+        <NavItem url="/" text="About" />
+        <NavItem url="/" text="Projects" />
+        <ResumeButton />
       </ul>
     );
   };

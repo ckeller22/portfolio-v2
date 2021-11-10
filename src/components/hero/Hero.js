@@ -62,12 +62,20 @@ const Hero = () => {
     );
   };
 
+  const ProjectsButton = () => {
+    return (
+      <a href="/">
+        <OutlinedButton text="Projects" className="mt-2 " />
+      </a>
+    );
+  };
+
   return (
     <CenteredContainer className="">
       <CenteredGrid>
         <TextContainer>
           <HeroText />
-          <OutlinedButton url="" title="Projects" />
+          <ProjectsButton />
           <HeroLinkList />
         </TextContainer>
         <EditorSVG />
