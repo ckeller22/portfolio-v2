@@ -5,7 +5,7 @@ import portrait from "../../images/duotone.jpg";
 function About() {
   const Paragraph = ({ children }) => {
     return (
-      <div className="pb-4 pr-5 leading-relaxed text-earth-gray-300">
+      <div className="pb-4 leading-relaxed md:pr-5 text-earth-gray-300">
         {children}
       </div>
     );
@@ -13,22 +13,26 @@ function About() {
 
   const FlexContainer = ({ children }) => {
     return (
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col px-4 md:flex-row md:justify-between">
         {children}
       </div>
     );
   };
 
   const TextContainer = ({ children }) => {
-    return <div className=" md:w-3/5">{children}</div>;
+    return (
+      <div className="text-center text-md md:text-lg md:text-left md:w-3/5">
+        {children}
+      </div>
+    );
   };
 
   const PortraitImage = () => {
     return (
-      <div className="w-2/5 h-full pl-10">
+      <div className="h-full py-8 md:pl-10 md:w-2/5">
         <img
           src={portrait}
-          className="w-full rounded-full filter drop-shadow-lg"
+          className="w-1/2 mx-auto rounded-full md:w-full filter drop-shadow-lg"
           alt=""
         ></img>
       </div>
