@@ -10,14 +10,18 @@ const Projects = () => {
   });
 
   const GridContainer = tw.div(`
-    grid
-    grid-cols-3
-    grid-rows-2
+    flex
+    flex-col
+    px-4
+    md:px-0
+    md:grid
+    md:grid-cols-3
+    md:grid-rows-2
     gap-5
   `);
 
   return (
-    <CenteredContainer id="projects">
+    <CenteredContainer id="projects" className="">
       <SectionHeader title="Projects" className="pb-2" />
 
       <GridContainer>{cards}</GridContainer>

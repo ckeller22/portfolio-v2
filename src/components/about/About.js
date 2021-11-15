@@ -12,11 +12,15 @@ function About() {
   };
 
   const FlexContainer = ({ children }) => {
-    return <div className="flex flex-row justify-between">{children}</div>;
+    return (
+      <div className="flex flex-col md:flex-row md:justify-between">
+        {children}
+      </div>
+    );
   };
 
   const TextContainer = ({ children }) => {
-    return <div className="w-3/5">{children}</div>;
+    return <div className=" md:w-3/5">{children}</div>;
   };
 
   const PortraitImage = () => {
@@ -33,9 +37,7 @@ function About() {
 
   const TechList = () => {
     const ListItem = ({ technology }) => {
-      return (
-        <li className="text-lg font-bold text-earth-gray-200">{technology}</li>
-      );
+      return <li className="text-lg font-bold text-green-300">{technology}</li>;
     };
 
     const technologies = [
@@ -56,10 +58,9 @@ function About() {
   };
 
   return (
-    <CenteredContainer className="h-screen">
-      <div className="mx-20">
+    <CenteredContainer className="md:h-screen">
+      <div className="mx-0 md:mx-20 ">
         <SectionHeader title="About me" className="pb-2" />
-
         <FlexContainer>
           <TextContainer className="">
             <Paragraph>

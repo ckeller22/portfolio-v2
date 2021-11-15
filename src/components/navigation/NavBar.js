@@ -4,14 +4,14 @@ import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
 import OutlinedButton from "../layout/OutlinedButton";
 
-//TODO: Set up links, add resume, green outline button
+//TODO investtigate animation not playing
+//TODO size the nav bar and icons for mobile
 
 const NavBar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleMobileMenuClick = () => {
     setMobileNavOpen(!mobileNavOpen);
-    console.log(mobileNavOpen);
   };
 
   const NavItem = ({ url, text }) => {
@@ -42,10 +42,18 @@ const NavBar = () => {
     );
   };
 
-  const MobileMenuButton = () => {
+  const MobileMenuButton = ({ open }) => {
+    const tailwindClasses = "flex md:hidden";
+
+    const animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
+      open: open,
+    });
+
     return (
-      <div className="flex items-center md:hidden">
-        <button onClick={handleMobileMenuClick}>Mobile Button</button>
+      <div onClick={handleMobileMenuClick} className={animateMobileMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     );
   };
@@ -80,7 +88,7 @@ const NavBar = () => {
         <div className="container absolute top-0 flex items-center justify-between max-w-6xl pt-2 mx-auto ">
           <Logo />
           <NavLinks />
-          <MobileMenuButton />
+          <MobileMenuButton open={mobileNavOpen} />
         </div>
       </CenteredContainer>
       <MobileNavMenu open={mobileNavOpen} />

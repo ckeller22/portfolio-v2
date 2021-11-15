@@ -20,6 +20,7 @@ const Card = ({ project }) => {
     flex-col
     drop-shadow-xl
     p-4
+    
   `);
 
   // const Grid = ({ children }) => {
