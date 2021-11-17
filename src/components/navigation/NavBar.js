@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
@@ -14,10 +14,16 @@ const NavBar = () => {
     setMobileNavOpen(!mobileNavOpen);
   };
 
+  const handleAboutClick = () => {
+    aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const NavItem = ({ url, text }) => {
     return (
       <li className="hidden font-normal transition duration-300 text-earth-gray-200 hover:text-green-300 md:block">
-        <a href={url}>{text}</a>
+        <a href={url} onClick={() => window.location.replace("/#about")}>
+          {text}
+        </a>
       </li>
     );
   };
