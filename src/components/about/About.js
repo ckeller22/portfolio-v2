@@ -24,9 +24,7 @@ const About = () => {
 
   const TextContainer = ({ children }) => {
     return (
-      <div className="text-center text-md md:text-lg md:text-left md:w-3/5">
-        {children}
-      </div>
+      <div className="text-left text-md md:text-lg md:w-3/5">{children}</div>
     );
   };
 
@@ -61,7 +59,11 @@ const About = () => {
       return <ListItem technology={technology}></ListItem>;
     });
 
-    return <ul className="grid grid-cols-3 pb-4 ">{allTechnologies}</ul>;
+    return (
+      <ul className="grid grid-cols-2 pb-4 md:grid-cols-3 ">
+        {allTechnologies}
+      </ul>
+    );
   };
 
   return (
@@ -91,8 +93,8 @@ const About = () => {
             </Paragraph>
             <Paragraph>
               <p>
-                In my free time, I love to make music, play board games, and
-                enjoy a beer or two with friends.
+                In my free time, I love to make music, play board and video
+                games, and enjoy a beer or two with friends.
               </p>
             </Paragraph>
             <Paragraph>
