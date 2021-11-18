@@ -16,7 +16,7 @@ const About = () => {
 
   const FlexContainer = ({ children }) => {
     return (
-      <div className="flex flex-col px-4 md:flex-row md:justify-between">
+      <div className="flex flex-col md:flex-row md:justify-between">
         {children}
       </div>
     );
@@ -35,6 +35,7 @@ const About = () => {
           src={portrait}
           className="w-1/2 mx-auto rounded-full md:w-full filter drop-shadow-lg"
           alt=""
+          loading="lazy"
         ></img>
       </div>
     );

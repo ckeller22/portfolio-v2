@@ -4,7 +4,7 @@ const CenteredContainer = ({ className, children }) => {
   const Container = tw.div(`
     ${className}
     container
-    md:max-w-6xl
+    md:max-w-7xl
     
     mx-auto
     
