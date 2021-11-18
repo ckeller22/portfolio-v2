@@ -14,9 +14,9 @@ const NavBar = () => {
     setMobileNavOpen(!mobileNavOpen);
   };
 
-  const handleAboutClick = () => {
-    aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  // const handleAboutClick = () => {
+  //   aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  // };
 
   const NavItem = ({ url, text }) => {
     return (

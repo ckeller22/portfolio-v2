@@ -3,6 +3,7 @@ import CenteredContainer from "../layout/CenteredContainer";
 import SectionHeader from "../layout/SectionHeader";
 import OutlinedButton from "../layout/OutlinedButton";
 import { email } from "../../data/statics";
+import Footer from "./Footer";
 
 function Contact() {
   const EmailButton = () => {
@@ -14,7 +15,7 @@ function Contact() {
   };
 
   return (
-    <CenteredContainer className="px-4 md:px-0">
+    <CenteredContainer className="relative px-4 md:px-0">
       <div className="flex flex-col items-center justify-center h-screen text-earth-gray-300">
         <SectionHeader title="Get in touch"></SectionHeader>
         <p className="max-w-2xl mx-auto mt-2 tracking-wide text-center text-md md:text-lg">
@@ -25,6 +26,7 @@ function Contact() {
         </p>
         <EmailButton />
       </div>
+      <Footer />
     </CenteredContainer>
   );
 }

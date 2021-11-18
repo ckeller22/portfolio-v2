@@ -22,7 +22,7 @@ const Hero = () => {
         <h4 className="font-bold tracking-widest uppercase text-earth-gray-700">
           My name is
         </h4>
-        <h1 className="text-4xl font-bold tracking-wide md:text-6xl text-earth-gray-50">
+        <h1 className="text-4xl font-bold tracking-wide text-earth-gray-50 md:text-6xl">
           Chris Keller
         </h1>
         <h2 className="mb-2 text-2xl font-bold tracking-wider md:text-4xl text-earth-gray-300">

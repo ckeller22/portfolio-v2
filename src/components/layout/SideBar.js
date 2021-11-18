@@ -3,14 +3,14 @@ import tw from "tailwind-styled-components";
 
 function SideBar({ children, className }) {
   const SideBar = tw.div(`
-    ${className}
+    ${className || ""}
     hidden
-    md:flex
     fixed
     bottom-0
+    mb-10
     flex-col-reverse
     text-earth-gray-50
-    mb-10
+    2xl:flex
     `);
 
   return <SideBar>{children}</SideBar>;

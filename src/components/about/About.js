@@ -3,7 +3,7 @@ import CenteredContainer from "../layout/CenteredContainer";
 import SectionHeader from "../layout/SectionHeader";
 import portrait from "../../images/duotone.jpg";
 
-const About = forwardRef(aboutRef) => {
+const About = () => {
   const aboutRef = useRef();
 
   const Paragraph = ({ children }) => {
@@ -112,6 +112,6 @@ const About = forwardRef(aboutRef) => {
       </div>
     </CenteredContainer>
   );
-}
+};
 
 export default About;
