@@ -15,8 +15,9 @@ const Projects = () => {
     px-4
     md:px-0
     md:grid
-    md:grid-cols-3
-    md:grid-rows-2
+    md:grid-cols-2
+    md:grid-rows-auto
+    lg:grid-cols-3
     gap-5
   `);
 
