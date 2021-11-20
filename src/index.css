@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* TODO refactor hover states to tailwind */
-/* TODO Add underline hover states to none green links*/
+/* TODO Add underline hover states to non green links*/
 @layer base {
   .link {
     position: relative;
@@ -44,58 +44,6 @@
     max-height: 100%;
   }
 
-  .nav-icon {
-    width: 60px;
-    height: 45px;
-    position: relative;
-    cursor: pointer;
-  }
-
-  /* Mobile menu icon */
-  .nav-icon span {
-    position: absolute;
-    height: 9px;
-    width: 100%;
-    background-color: #6ee7b7;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: transform 0.5s ease;
-  }
-
-  .nav-icon span:nth-child(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-
-  .nav-icon span:nth-child(2) {
-    top: 18px;
-    transform-origin: left center;
-  }
-
-  .nav-icon span:nth-child(3) {
-    top: 36px;
-    transform-origin: left center;
-  }
-
-  .nav-icon.open span:nth-child(1) {
-    transform: rotate(45deg);
-    top: -3px;
-    left: 8px;
-  }
-
-  .nav-icon.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-  }
-
-  .nav-icon.open span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 39px;
-    left: 8px;
-  }
-
   /* Mobile menu icon */
 }
 
@@ -121,4 +69,54 @@
   .debug {
     border: 2px solid lime;
   }
+}
+
+.nav-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Mobile menu icon */
+.nav-icon span {
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  background-color: #6ee7b7;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 1s ease;
+}
+
+.nav-icon span:nth-child(1) {
+  top: 0%;
+  transform-origin: left center;
+}
+
+.nav-icon span:nth-child(2) {
+  top: 35%;
+  transform-origin: left center;
+}
+
+.nav-icon span:nth-child(3) {
+  top: 70%;
+  transform-origin: left center;
+}
+
+.nav-icon.open span:nth-child(1) {
+  transform: rotate(45deg);
+  left: 8px;
+}
+
+.nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.nav-icon.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  left: 8px;
 }

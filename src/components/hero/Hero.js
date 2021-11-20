@@ -4,7 +4,7 @@ import OutlinedButton from "../layout/OutlinedButton";
 
 const Hero = () => {
   const CenteredGrid = ({ children }) => {
-    return <div className="flex items-center h-full ">{children}</div>;
+    return <div className="flex items-center h-full">{children}</div>;
   };
 
   const TextContainer = ({ children }) => {
@@ -13,7 +13,7 @@ const Hero = () => {
 
   const HeroText = () => {
     return (
-      <div className="mb-2">
+      <div className="mb-2 ">
         <h4 className="text-xl font-bold tracking-widest uppercase text-earth-gray-700">
           My name is
         </h4>
@@ -23,7 +23,7 @@ const Hero = () => {
         <h2 className="mb-2 text-2xl font-bold tracking-wider md:text-5xl text-earth-gray-300">
           I build things.
         </h2>
-        <p className="max-w-xl tracking-wide text-earth-gray-300 leading">
+        <p className="max-w-sm text-sm tracking-wide md:max-w-xl text-earth-gray-300 leading md:text-lg ">
           I am a software engineer specializing in developing and designing
           high-quality websites and applications. I am also experienced in IT
           support and can provide technical services.
@@ -51,7 +51,7 @@ const Hero = () => {
     });
 
     return (
-      <ul className="flex flex-row my-auto mt-4 mb-0 ml-8 space-x-8 text-earth-gray-200 ">
+      <ul className="flex flex-row my-auto mt-4 mb-0 space-x-8 md:ml-8 text-earth-gray-200 ">
         {heroLinks}
       </ul>
     );
@@ -70,7 +70,7 @@ const Hero = () => {
       <CenteredGrid>
         <TextContainer>
           <HeroText />
-          <div className="flex">
+          <div className="flex flex-col md:flex-row">
             <ProjectsButton />
             <HeroLinkList />
           </div>

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
@@ -49,7 +49,7 @@ const NavBar = () => {
   };
 
   const MobileMenuButton = ({ open }) => {
-    const tailwindClasses = "flex md:hidden";
+    const tailwindClasses = "flex md:hidden mt-2 ";
 
     const animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
       open: open,
@@ -66,7 +66,7 @@ const NavBar = () => {
 
   const MobileNavMenu = ({ open }) => {
     const tailwindClasses =
-      "h-1/2 w-5/6 bg-white right-0 left-0 top-10 mx-auto flex flex-col";
+      "h-1/2 w-5/6 bg-white right-0 left-0 top-20 mx-auto flex flex-col z-20 ";
 
     const displayMobileNavLinks = classNames(
       `${tailwindClasses} mobile-nav-menu`,
@@ -91,7 +91,8 @@ const NavBar = () => {
   return (
     <nav className="">
       <CenteredContainer>
-        <div className="container absolute top-0 flex items-center justify-between max-w-6xl pt-2 mx-auto ">
+        {/* Padding for absolute elements don't inherit. If padding needs to be changed on center container, also change it here  */}
+        <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 pt-4 mx-auto md:pt-2">
           <Logo />
           <NavLinks />
           <MobileMenuButton open={mobileNavOpen} />

@@ -12,7 +12,6 @@ const Projects = () => {
   const GridContainer = tw.div(`
     flex
     flex-col
-    px-4
     md:px-0
     md:grid
     md:grid-cols-2
