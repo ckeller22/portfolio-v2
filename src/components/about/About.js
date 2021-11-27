@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from "react";
+import { useRef } from "react";
 import CenteredContainer from "../layout/CenteredContainer";
 import SectionHeader from "../layout/SectionHeader";
 import portrait from "../../images/duotone.jpg";
@@ -30,7 +30,7 @@ const About = () => {
 
   const PortraitImage = () => {
     return (
-      <div className="h-full py-8 md:pl-10 md:w-2/5">
+      <div className="h-full py-8 md:py-0 md:pl-10 md:w-2/5">
         <img
           src={portrait}
           className="w-1/2 mx-auto rounded-full md:w-full filter drop-shadow-lg"

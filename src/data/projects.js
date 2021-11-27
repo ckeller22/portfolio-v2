@@ -16,7 +16,7 @@ export const projects = [
       "Scalable microservice app that allows users to sign up to view and purchase event tickets using Stripe API.",
     technologies: ["Express", "React", "NextJS", "Kubernetes"],
     githubURL: "https://github.com/ckeller22/microservice-ticketing-app",
-    liveURL: "http://www.tixgit.website/",
+    liveURL: null,
   },
   {
     id: uuidv4(),

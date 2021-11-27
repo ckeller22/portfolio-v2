@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, React } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
@@ -51,8 +51,14 @@ const NavBar = () => {
   const MobileMenuButton = ({ open }) => {
     const tailwindClasses = "flex md:hidden mt-2 ";
 
-    const animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
+    var animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
       open: open,
+    });
+
+    useEffect(() => {
+      return () => {
+        console.log("Menu was unmounted");
+      };
     });
 
     return (
@@ -92,7 +98,7 @@ const NavBar = () => {
     <nav className="">
       <CenteredContainer>
         {/* Padding for absolute elements don't inherit. If padding needs to be changed on center container, also change it here  */}
-        <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 pt-4 mx-auto md:pt-2">
+        <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 pt-4 mx-auto md:pt-2 md:px-0">
           <Logo />
           <NavLinks />
           <MobileMenuButton open={mobileNavOpen} />
