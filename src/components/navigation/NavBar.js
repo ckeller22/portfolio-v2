@@ -1,23 +1,11 @@
-import { useState, useEffect, React } from "react";
+import { useState, React } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import classNames from "classnames";
 import OutlinedButton from "../layout/OutlinedButton";
-
-//TODO investtigate animation not playing
-//TODO size the nav bar and icons for mobile
+import MobileNav from "./MobileNav";
 
 const NavBar = () => {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-  const handleMobileMenuClick = () => {
-    setMobileNavOpen(!mobileNavOpen);
-  };
-
-  // const handleAboutClick = () => {
-  //   aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
   const NavItem = ({ url, text }) => {
     return (
       <li className="hidden font-normal transition duration-300 text-earth-gray-200 hover:text-green-300 md:block">
@@ -48,25 +36,28 @@ const NavBar = () => {
     );
   };
 
-  const MobileMenuButton = ({ open }) => {
-    const tailwindClasses = "flex md:hidden mt-2 ";
+  const MobileMenuButton = () => {
+    const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+    const handleMobileMenuClick = () => {
+      setMobileNavOpen(!mobileNavOpen);
+    };
+
+    const tailwindClasses = "relative flex md:hidden mt-2 ";
 
     var animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
-      open: open,
-    });
-
-    useEffect(() => {
-      return () => {
-        console.log("Menu was unmounted");
-      };
+      open: mobileNavOpen,
     });
 
     return (
-      <div onClick={handleMobileMenuClick} className={animateMobileMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <>
+        <div onClick={handleMobileMenuClick} className={animateMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <MobileNavMenu open={mobileNavOpen} />
+      </>
     );
   };
 
@@ -85,26 +76,23 @@ const NavBar = () => {
       <div className={displayMobileNavLinks}>
         <ul>
           <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
+          <li>test 2</li>
+          <li>test 4</li>
         </ul>
       </div>
     );
   };
 
   return (
-    <nav className="">
+    <nav>
       <CenteredContainer>
         {/* Padding for absolute elements don't inherit. If padding needs to be changed on center container, also change it here  */}
         <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 pt-4 mx-auto md:pt-2 md:px-0">
           <Logo />
           <NavLinks />
-          <MobileMenuButton open={mobileNavOpen} />
+          <MobileNav />
         </div>
       </CenteredContainer>
-      <MobileNavMenu open={mobileNavOpen} />
     </nav>
   );
 };
