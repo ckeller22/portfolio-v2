@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO refactor hover states to tailwind */
-/* TODO Add underline hover states to non green links*/
 @layer base {
   .link {
     position: relative;
@@ -37,7 +35,6 @@
   }
 
   .mobile-nav-menu.open {
-    display: block;
     position: absolute;
     visibility: visible;
     opacity: 1;
@@ -94,6 +91,15 @@
   .nav-icon.open span:nth-child(3) {
     transform: rotate(-45deg);
     left: 8px;
+  }
+
+  nav {
+    top: -100px;
+    transition: top 0.35s;
+  }
+
+  nav.visible {
+    top: 0;
   }
 }
 

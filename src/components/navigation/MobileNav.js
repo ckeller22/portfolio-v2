@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, React } from "react";
 import classNames from "classnames";
 import { Link } from "react-scroll";
 
-const MobileNav = () => {
+const MobileNav = ({ isVisible }) => {
   // state
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -11,7 +11,7 @@ const MobileNav = () => {
   };
 
   // menu button
-  const tailwindClassesButton = "relative flex md:hidden mt-2 ";
+  const tailwindClassesButton = "flex md:hidden mt-2 ";
 
   var animateMenuButton = classNames(`${tailwindClassesButton} nav-icon`, {
     open: isMobileNavOpen,
@@ -19,10 +19,10 @@ const MobileNav = () => {
 
   // dropdown
   const tailwindClassesMenu =
-    "fixed bg-earth-gray-900 right-0 left-0 top-20 mx-auto flex flex-col z-20  filter drop-shadow-md";
+    "bg-earth-gray-900 left-0 right-0 top-20 mx-auto flex flex-col z-20 filter drop-shadow-md ";
 
   const displayMenu = classNames(`${tailwindClassesMenu} mobile-nav-menu`, {
-    open: isMobileNavOpen,
+    open: isMobileNavOpen && isVisible,
   });
 
   const NavItem = ({ url, text, id }) => {
@@ -47,6 +47,11 @@ const MobileNav = () => {
   const menuButtonRef = useRef();
 
   useEffect(() => {
+    // checks to see if scroll has happened to close menu
+    if (!isVisible) {
+      setIsMobileNavOpen(false);
+    }
+
     let handler = (event) => {
       // check to see for click out of drop down menu or menu button then changes open state to false
       if (
@@ -64,7 +69,7 @@ const MobileNav = () => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, [setIsMobileNavOpen, isVisible]);
 
   return (
     <>
@@ -78,7 +83,7 @@ const MobileNav = () => {
         <span></span>
       </div>
       <div ref={menuRef} className={displayMenu}>
-        <ul className="flex flex-col items-center my-10 space-y-10 text-xl ">
+        <ul className="flex flex-col items-center mb-10 space-y-10 text-xl ">
           <NavItem id="about" text="About" />
           <NavItem id="projects" text="Projects" />
           <NavItem text="Resume" />

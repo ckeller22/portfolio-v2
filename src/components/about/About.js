@@ -13,7 +13,7 @@ const About = () => {
 
   const FlexContainer = ({ children }) => {
     return (
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
         {children}
       </div>
     );
@@ -21,13 +21,13 @@ const About = () => {
 
   const TextContainer = ({ children }) => {
     return (
-      <div className="text-left text-md md:text-lg md:w-3/5">{children}</div>
+      <div className="text-left text-md md:text-lg lg:w-3/5">{children}</div>
     );
   };
 
   const PortraitImage = () => {
     return (
-      <div className="h-full py-8 md:py-0 md:pl-10 md:w-2/5">
+      <div className="h-full py-8 xl:py-0 lg:pl-10 md:w-2/5">
         <img
           src={portrait}
           className="w-1/2 mx-auto rounded-full md:w-full filter drop-shadow-lg"
@@ -65,11 +65,11 @@ const About = () => {
   };
 
   return (
-    <CenteredContainer className="md:h-screen" id="about">
+    <CenteredContainer className="xl:h-screen" id="about">
       <div className="mx-0 md:mx-20 ">
         <SectionHeader id="about" title="About me" className="pb-2" />
         <FlexContainer>
-          <TextContainer className="">
+          <TextContainer>
             <Paragraph>
               <p>
                 I am a software engineer, IT expert, and a nerd. Growing up I
