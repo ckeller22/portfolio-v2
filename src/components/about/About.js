@@ -1,6 +1,7 @@
 import CenteredContainer from "../layout/CenteredContainer";
 import SectionHeader from "../layout/SectionHeader";
 import portrait from "../../images/duotone.jpg";
+import GreenLinkItem from "../layout/GreenLinkItem";
 
 const About = () => {
   const Paragraph = ({ children }) => {
@@ -72,20 +73,37 @@ const About = () => {
           <TextContainer>
             <Paragraph>
               <p>
-                I am a software engineer, IT expert, and a nerd. Growing up I
-                had always had a passion for taking things apart, breaking
-                stuff, and figuring out how to put things back together again. I
-                am a creative person and love creating and designing beautiful
-                experiences and elegant software and solutions. Whether it be
-                music, art, or technology, I just love to make things.
+                I am a software engineer, IT expert, and a nerd. I hold a
+                Bachelor of Science in{" "}
+                <GreenLinkItem
+                  text={"Software Development"}
+                  url={
+                    "https://www.wgu.edu/online-it-degrees/software-development-bachelors-program.html"
+                  }
+                />{" "}
+                from{" "}
+                <GreenLinkItem
+                  text={"Western Governors University."}
+                  url={"https://www.wgu.edu/"}
+                />{" "}
               </p>
             </Paragraph>
-
+            <Paragraph>
+              Growing up I had always had a passion for taking things apart,
+              breaking stuff, and figuring out how to put things back together
+              again. I am a creative person and love creating and designing
+              beautiful experiences and elegant software and solutions. Whether
+              it be music, art, or technology, I just love to make things.
+            </Paragraph>
             <Paragraph>
               <p>
                 I am also a natural problem solver and I get a lot of
-                gratification solving difficult problems. I am A+ certified and
-                can provide IT troubleshooting support. I've built and
+                gratification solving difficult problems. I am{" "}
+                <GreenLinkItem
+                  text={"A+ certified"}
+                  url={"https://www.comptia.org/certifications/a"}
+                />{" "}
+                and can provide IT troubleshooting support. I've built and
                 maintained several computers.
               </p>
             </Paragraph>
@@ -102,7 +120,16 @@ const About = () => {
             <Paragraph>
               <p>
                 A full list of technologies I have worked with can be viewed
-                either on my resume or my GitHub.
+                either on my{" "}
+                <GreenLinkItem
+                  text={"resume"}
+                  url={"/assets/ChristopherKellerResumeSD.pdf"}
+                />{" "}
+                or my{" "}
+                <GreenLinkItem
+                  text={"GitHub."}
+                  url={"https://github.com/ckeller22"}
+                />
               </p>
             </Paragraph>
           </TextContainer>

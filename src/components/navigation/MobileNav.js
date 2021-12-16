@@ -27,16 +27,29 @@ const MobileNav = ({ isVisible }) => {
 
   const NavItem = ({ url, text, id }) => {
     return (
-      <li className="p-2 tracking-wider transition duration-300 text-earth-gray-200 hover:text-green-300">
+      <li className="p-2 tracking-wider transition duration-300 cursor-pointer text-earth-gray-200 hover:text-green-300 ">
         <Link
           to={id}
           smooth={true}
           duration={500}
-          offset={-25}
+          offset={-75}
           onClick={handleMobileMenuClick}
         >
           {text}
         </Link>
+      </li>
+    );
+  };
+
+  const ResumeItem = () => {
+    return (
+      <li
+        className="p-2 tracking-wider transition duration-300 cursor-pointer text-earth-gray-200 hover:text-green-300"
+        onClick={handleMobileMenuClick}
+      >
+        <a href="/assets/ChristopherKellerResumeSD.pdf" download>
+          Resume
+        </a>
       </li>
     );
   };
@@ -86,7 +99,8 @@ const MobileNav = ({ isVisible }) => {
         <ul className="flex flex-col items-center mb-10 space-y-10 text-xl ">
           <NavItem id="about" text="About" />
           <NavItem id="projects" text="Projects" />
-          <NavItem text="Resume" />
+          <NavItem id="contact" text="Contact" />
+          <ResumeItem />
         </ul>
       </div>
     </>

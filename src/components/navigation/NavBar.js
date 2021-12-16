@@ -34,7 +34,7 @@ const NavBar = () => {
 
   const NavItem = ({ id, text }) => {
     return (
-      <li className="hidden font-normal transition duration-300 text-earth-gray-200 hover:text-green-300 md:block">
+      <li className="hidden font-normal transition duration-300 cursor-pointer text-earth-gray-200 hover:text-green-300 md:block">
         <Link to={id} smooth={true} duration={500} offset={-50}>
           {text}
         </Link>
@@ -45,7 +45,7 @@ const NavBar = () => {
   const ResumeButton = () => {
     return (
       <li className="hidden md:block">
-        <a href="/assets/ChristopherKellerResumeSD.pdf" download>
+        <a href="/assets/ChristopherKellerResumeSD.pdf">
           <OutlinedButton text="Resume" />
         </a>
       </li>
@@ -57,6 +57,7 @@ const NavBar = () => {
       <ul className="flex items-center justify-end space-x-6">
         <NavItem id="about" text="About" />
         <NavItem id="projects" text="Projects" />
+        <NavItem id="contact" text="Contact" />
         <ResumeButton />
       </ul>
     );

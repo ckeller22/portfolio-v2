@@ -15,7 +15,7 @@ function Contact() {
   };
 
   return (
-    <CenteredContainer className="relative px-4 md:px-0">
+    <CenteredContainer className="relative px-4 md:px-0" id="contact">
       <div className="flex flex-col items-center justify-center h-screen text-earth-gray-300">
         <SectionHeader title="Get in touch"></SectionHeader>
         <p className="max-w-2xl mx-auto mt-2 tracking-wide text-center text-md md:text-lg">

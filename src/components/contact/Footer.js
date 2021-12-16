@@ -16,9 +16,6 @@ const Footer = () => {
         {icons}
       </ul>
       <p className="">Built by Chris Keller - 2021</p>
-      <p className="text-xs tracking-wider uppercase text-earth-gray-500">
-        Inspired by Brittany Chiang
-      </p>
     </div>
   );
 };
