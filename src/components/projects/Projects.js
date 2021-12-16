@@ -18,6 +18,7 @@ const Projects = () => {
     md:grid-rows-auto
     lg:grid-cols-3
     gap-5
+    
   `);
 
   return (

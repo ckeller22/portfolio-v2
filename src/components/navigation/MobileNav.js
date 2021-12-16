@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, React } from "react";
 import classNames from "classnames";
+import { Link } from "react-scroll";
 
 const MobileNav = () => {
   // state
@@ -24,10 +25,18 @@ const MobileNav = () => {
     open: isMobileNavOpen,
   });
 
-  const NavItem = ({ url, text }) => {
+  const NavItem = ({ url, text, id }) => {
     return (
       <li className="p-2 tracking-wider transition duration-300 text-earth-gray-200 hover:text-green-300">
-        <a href={url}>{text}</a>
+        <Link
+          to={id}
+          smooth={true}
+          duration={500}
+          offset={-25}
+          onClick={handleMobileMenuClick}
+        >
+          {text}
+        </Link>
       </li>
     );
   };
@@ -70,9 +79,9 @@ const MobileNav = () => {
       </div>
       <div ref={menuRef} className={displayMenu}>
         <ul className="flex flex-col items-center my-10 space-y-10 text-xl ">
-          <NavItem url="/" text="About" />
-          <NavItem url="/" text="Projects" />
-          <NavItem url="/" text="Resume" />
+          <NavItem id="about" text="About" />
+          <NavItem id="projects" text="Projects" />
+          <NavItem text="Resume" />
         </ul>
       </div>
     </>

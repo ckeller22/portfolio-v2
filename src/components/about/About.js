@@ -1,11 +1,8 @@
-import { useRef } from "react";
 import CenteredContainer from "../layout/CenteredContainer";
 import SectionHeader from "../layout/SectionHeader";
 import portrait from "../../images/duotone.jpg";
 
 const About = () => {
-  const aboutRef = useRef();
-
   const Paragraph = ({ children }) => {
     return (
       <div className="pb-4 leading-relaxed md:pr-5 text-earth-gray-300">
@@ -68,9 +65,9 @@ const About = () => {
   };
 
   return (
-    <CenteredContainer ref={aboutRef} className="md:h-screen">
+    <CenteredContainer className="md:h-screen" id="about">
       <div className="mx-0 md:mx-20 ">
-        <SectionHeader title="About me" className="pb-2" />
+        <SectionHeader id="about" title="About me" className="pb-2" />
         <FlexContainer>
           <TextContainer className="">
             <Paragraph>

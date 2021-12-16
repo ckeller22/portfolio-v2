@@ -1,6 +1,7 @@
 import tw from "tailwind-styled-components";
+import Element from "react-scroll/modules/components/Element";
 
-const CenteredContainer = ({ className, children }) => {
+const CenteredContainer = ({ className, children, id }) => {
   const Container = tw.div(`
     ${className}
     px-6
@@ -12,7 +13,11 @@ const CenteredContainer = ({ className, children }) => {
     
   `);
 
-  return <Container>{children}</Container>;
+  return (
+    <Element name={id}>
+      <Container>{children}</Container>
+    </Element>
+  );
 };
 
 export default CenteredContainer;

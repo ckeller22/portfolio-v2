@@ -3,14 +3,15 @@ import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
 import OutlinedButton from "../layout/OutlinedButton";
 import MobileNav from "./MobileNav";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
-  const NavItem = ({ url, text }) => {
+  const NavItem = ({ id, text }) => {
     return (
       <li className="hidden font-normal transition duration-300 text-earth-gray-200 hover:text-green-300 md:block">
-        <a href={url} onClick={() => window.location.replace("/#about")}>
+        <Link to={id} smooth={true} duration={500} offset={-50}>
           {text}
-        </a>
+        </Link>
       </li>
     );
   };
@@ -28,8 +29,8 @@ const NavBar = () => {
   const NavLinks = () => {
     return (
       <ul className="flex items-center justify-end space-x-6">
-        <NavItem url="/" text="About" />
-        <NavItem url="/" text="Projects" />
+        <NavItem id="about" text="About" />
+        <NavItem id="projects" text="Projects" />
         <ResumeButton />
       </ul>
     );
