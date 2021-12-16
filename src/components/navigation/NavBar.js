@@ -1,7 +1,6 @@
-import { useState, React } from "react";
+import { React } from "react";
 import Logo from "./Logo";
 import CenteredContainer from "../layout/CenteredContainer";
-import classNames from "classnames";
 import OutlinedButton from "../layout/OutlinedButton";
 import MobileNav from "./MobileNav";
 
@@ -33,53 +32,6 @@ const NavBar = () => {
         <NavItem url="/" text="Projects" />
         <ResumeButton />
       </ul>
-    );
-  };
-
-  const MobileMenuButton = () => {
-    const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-    const handleMobileMenuClick = () => {
-      setMobileNavOpen(!mobileNavOpen);
-    };
-
-    const tailwindClasses = "relative flex md:hidden mt-2 ";
-
-    var animateMobileMenu = classNames(`${tailwindClasses} nav-icon`, {
-      open: mobileNavOpen,
-    });
-
-    return (
-      <>
-        <div onClick={handleMobileMenuClick} className={animateMobileMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <MobileNavMenu open={mobileNavOpen} />
-      </>
-    );
-  };
-
-  const MobileNavMenu = ({ open }) => {
-    const tailwindClasses =
-      "h-1/2 w-5/6 bg-white right-0 left-0 top-20 mx-auto flex flex-col z-20 ";
-
-    const displayMobileNavLinks = classNames(
-      `${tailwindClasses} mobile-nav-menu`,
-      {
-        open: open,
-      }
-    );
-
-    return (
-      <div className={displayMobileNavLinks}>
-        <ul>
-          <li>Test</li>
-          <li>test 2</li>
-          <li>test 4</li>
-        </ul>
-      </div>
     );
   };
 

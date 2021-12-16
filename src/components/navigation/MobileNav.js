@@ -1,43 +1,78 @@
-import { useState, React } from "react";
+import { useState, useRef, useEffect, React } from "react";
 import classNames from "classnames";
 
 const MobileNav = () => {
   // state
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const handleMobileMenuClick = () => {
-    setMobileNavOpen(!mobileNavOpen);
+    setIsMobileNavOpen(!isMobileNavOpen);
   };
 
   // menu button
   const tailwindClassesButton = "relative flex md:hidden mt-2 ";
 
   var animateMenuButton = classNames(`${tailwindClassesButton} nav-icon`, {
-    open: mobileNavOpen,
+    open: isMobileNavOpen,
   });
 
   // dropdown
   const tailwindClassesMenu =
-    "fixed h-screen w-screen bg-white right-0 left-0 top-20 mx-auto flex flex-col z-20";
+    "fixed bg-earth-gray-900 right-0 left-0 top-20 mx-auto flex flex-col z-20  filter drop-shadow-md";
 
   const displayMenu = classNames(`${tailwindClassesMenu} mobile-nav-menu`, {
-    open: mobileNavOpen,
+    open: isMobileNavOpen,
+  });
+
+  const NavItem = ({ url, text }) => {
+    return (
+      <li className="p-2 tracking-wider transition duration-300 text-earth-gray-200 hover:text-green-300">
+        <a href={url}>{text}</a>
+      </li>
+    );
+  };
+
+  // Click out of menu
+  // refs for menu components
+  const menuRef = useRef();
+  const menuButtonRef = useRef();
+
+  useEffect(() => {
+    let handler = (event) => {
+      // check to see for click out of drop down menu or menu button then changes open state to false
+      if (
+        !menuRef.current.contains(event.target) &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMobileNavOpen(false);
+      }
+    };
+
+    // add when mounted
+    document.addEventListener("mousedown", handler);
+
+    // cleanup effect on unmount of menu
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
   });
 
   return (
     <>
-      <div onClick={handleMobileMenuClick} className={animateMenuButton}>
+      <div
+        ref={menuButtonRef}
+        onClick={handleMobileMenuClick}
+        className={animateMenuButton}
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div className={displayMenu}>
-        <ul>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
+      <div ref={menuRef} className={displayMenu}>
+        <ul className="flex flex-col items-center my-10 space-y-10 text-xl ">
+          <NavItem url="/" text="About" />
+          <NavItem url="/" text="Projects" />
+          <NavItem url="/" text="Resume" />
         </ul>
       </div>
     </>
