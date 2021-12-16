@@ -1,6 +1,7 @@
 import CenteredContainer from "../layout/CenteredContainer";
 import { links } from "../../data/statics";
 import OutlinedButton from "../layout/OutlinedButton";
+import Link from "react-scroll/modules/components/Link";
 
 const Hero = () => {
   const CenteredGrid = ({ children }) => {
@@ -59,9 +60,9 @@ const Hero = () => {
 
   const ProjectsButton = () => {
     return (
-      <a href="/">
+      <Link to="projects" smooth={true} duration={500} offset={-75}>
         <OutlinedButton text="Projects" className="mt-2 " />
-      </a>
+      </Link>
     );
   };
 
