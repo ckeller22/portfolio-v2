@@ -114,7 +114,7 @@ const About = () => {
               </p>
             </Paragraph>
             <Paragraph>
-              <p>I am most proficent in the following technologies :</p>
+              <p>I am most proficient in the following technologies :</p>
             </Paragraph>
             <TechList />
             <Paragraph>
