@@ -45,7 +45,7 @@ const NavBar = () => {
   const ResumeButton = () => {
     return (
       <li className="hidden md:block">
-        <a href="/assets/ChristopherKellerResumeSD.pdf">
+        <a href="/assets/ChristopherKellerResume2021.pdf">
           <OutlinedButton text="Resume" />
         </a>
       </li>

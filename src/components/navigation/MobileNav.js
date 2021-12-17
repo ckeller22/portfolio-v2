@@ -47,7 +47,7 @@ const MobileNav = ({ isVisible }) => {
         className="p-2 tracking-wider transition duration-300 cursor-pointer text-earth-gray-200 hover:text-green-300"
         onClick={handleMobileMenuClick}
       >
-        <a href="/assets/ChristopherKellerResumeSD.pdf" download>
+        <a href="/assets/ChristopherKellerResume2021.pdf" download>
           Resume
         </a>
       </li>
