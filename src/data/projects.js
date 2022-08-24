@@ -34,7 +34,7 @@ export const projects = [
       "First version of my portfolio website with custom CSS. Hosted utlizing Heroku platform.",
     technologies: ["CSS", "SCSS", "Javascript", "PHP"],
     githubURL: "https://github.com/ckeller22/Portfolio",
-    liveURL: "http://www.chriskeller.xyz/",
+    liveURL: "https://portfolio-chris-keller.herokuapp.com/",
   },
   {
     id: uuidv4(),
