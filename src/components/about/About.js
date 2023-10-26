@@ -123,7 +123,7 @@ const About = () => {
                 either on my{" "}
                 <GreenLinkItem
                   text={"resume"}
-                  url={"/assets/ChristopherKellerResumeSD.pdf"}
+                  url={"/assets/christopher-keller-resume-10-26-2023.pdf"}
                 />{" "}
                 or my{" "}
                 <GreenLinkItem
